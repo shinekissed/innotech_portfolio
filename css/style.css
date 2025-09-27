@@ -1,0 +1,239 @@
+/* ===== Global ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #faf9fc;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===== Hero Section ===== */
+
+.hero h1 {
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+.hero p {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 3s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1 }
+}
+
+.hero {
+  background: linear-gradient(rgba(142, 45, 226, 0.75), rgba(74, 0, 224, 0.75)),
+              url("../img/hero-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  min-height: 100vh;
+  padding: 150px 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* ===== Purple Gradient Reuse ===== */
+.bg-gradient-purple {
+  background: linear-gradient(90deg, #6a11cb, #a4508b);
+}
+
+.text-purple {
+  color: #6a11cb;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #eee;
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffd6f6;
+}
+
+/* ===== Page Header ===== */
+.page-header {
+  height: 60vh;
+  background: linear-gradient(rgba(106, 17, 203, 0.8), rgba(164, 80, 139, 0.8)),
+              url('../img/header-bg.jpg') center/cover no-repeat;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* ===== Services Section ===== */
+.expertise-section {
+  background: linear-gradient(135deg, #6a11cb, #a4508b);
+}
+
+.expertise-section .card {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  color: #6a11cb;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate-on-scroll .icon-circle {
+  transform: scale(0.5) rotate(-180deg);
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-on-scroll.show .icon-circle {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+
+/* ===== Portfolio Section ===== */
+.portfolio {
+  background: #f8f7fa;
+}
+
+.portfolio-item {
+  cursor: pointer;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item img {
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  background: rgba(106, 17, 203, 0.9);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  font-weight: 600;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+form.glass {
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+form.glass:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.btn-accent {
+  background: linear-gradient(90deg, #6a11cb, #a4508b);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Footer ===== */
+footer {
+  font-size: 0.9rem;
+}
+
+/* ===== Animations ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
